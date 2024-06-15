@@ -14,11 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Order.init({
+    orderId: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+      allowNull: false
+    },
     value: DataTypes.FLOAT,
     creationDate: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Order',
+    timestamps: false
   });
   return Order;
 };
